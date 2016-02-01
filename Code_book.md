@@ -70,6 +70,7 @@
 [68] "activity"   
 
 * Here is all the transforms I did to get to the clean dataset
+* 
  names(dataSubject)<-c("subject")  -- pulled all subject column from datasubject.txt file, and remane it "Subject"
 names(dataActivity)<- c("activity")  --pulled all activity description data from dataset Dataactivity.txt, and rename the column "activity"
  names(Data)<-gsub("^t", "Time", names(Data))  -- Rename any columns that start with "t" to Time
