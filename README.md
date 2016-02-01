@@ -1,11 +1,11 @@
 # Getting_and_Cleaning_Data
-## This file is created for Final Project to help you understand the steps I took to get the tidy dataset 
+## This file is created for Final Project by Ping Shao
 
 
-### * First, abtained data from the following website
+### First is getting data and cleaning data, and steps I took are as follows
 
+* Abtained data from the following website
 https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip
-
 * Read data into R, merged the training and the test sets to create one data set.
 * Extracts only the measurements on the mean and standard deviation for each measurement, and created one file for it.
 * Uses descriptive activity names to name the activities in the data set
