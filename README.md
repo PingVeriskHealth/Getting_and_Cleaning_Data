@@ -1,8 +1,8 @@
 # Getting_and_Cleaning_Data
-Final Project 
+## This file is created for Final Project to help you understand the steps I took to get the tidy dataset 
 
 
-*First, abtained data from the following website
+### * First, abtained data from the following website
 
 https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip
 
@@ -12,7 +12,7 @@ https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Datas
 * Renamed the data set with descriptive variable names.
 * Created an independent tidy data set with the average of each variable for each activity and each subject.
 
-*Pushed all changed into my repo, and in this folder you should have the following files:
+### * Pushed all changed into my repo, and in this folder you should have the following files:
 
 1, Data folder, which contains all the data downloaded for the project
 and tidy dataset
