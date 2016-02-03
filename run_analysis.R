@@ -27,6 +27,14 @@ names(dataFeatures)<- dataFeaturesNames$V2
 
 Data <- cbind(dataFeatures, cbind(dataSubject, dataActivity))
 
+# replace the activity numeric values with descriptive levels from the
+# activity_labels.txt file
+activities <- read.table(file.path(path_file,  "activity_labels.txt"),header = FALSE)
+Data[,2] <- as.factor(Data[,2])
+# A simple assignment works, as the levels function has the levels ordered
+# in the same order as the activities table
+levels(Data[,2]) <- activities[,2]
+rm(activities)
 
 #Extracts only the measurements on the mean and standard deviation for each measurement.
 
