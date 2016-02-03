@@ -1,5 +1,8 @@
 # Code Book for final dataset
-## The following is the columns names in the dataset
+
+This code book is created to walk you through data frames tidy.data. Subjects are the 30 vulenteers that we obtained the data from, and each of them were assigned a numeric number, and activities includes six activities (WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING).  The means were calculated with the mean() function after grouping the data by subject and activity.
+
+### The following are the columns that are included in the tidy dataset
 [1] "TimeBodyAccelerometer-mean()-X"                
  [2] "TimeBodyAccelerometer-mean()-Y"                
  [3] "TimeBodyAccelerometer-mean()-Z"                
@@ -69,7 +72,7 @@
 [67] "subject"                                       
 [68] "activity"   
 
-## Here is all the transforms I did to get to the clean dataset
+### Here is all the transforms I did to get to the clean dataset
 
  names(dataSubject)<-c("subject")  -- pulled all subject column from datasubject.txt file, and remane it "Subject"
  
