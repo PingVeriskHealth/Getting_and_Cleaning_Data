@@ -1,8 +1,16 @@
 # Code Book for final dataset
+This code book is created to walk you through data frames tidy.data. 
 
-This code book is created to walk you through data frames tidy.data. Subjects are the 30 vulenteers that we obtained the data from, and each of them were assigned a numeric number, and activities includes six activities (WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING).  The means were calculated with the mean() function after grouping the data by subject and activity.
+### Subjects
+Subjects are the 30 vulenteers that we obtained the data from, and each of them were assigned a numeric number
 
-### The following are the columns that are included in the tidy dataset
+### Activities
+
+Activities includes six activities (WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING).  
+
+The means were calculated with the mean() function after grouping the data by subject and activity.
+
+### Variables
 [1] "TimeBodyAccelerometer-mean()-X"                
  [2] "TimeBodyAccelerometer-mean()-Y"                
  [3] "TimeBodyAccelerometer-mean()-Z"                
@@ -69,23 +77,18 @@ This code book is created to walk you through data frames tidy.data. Subjects ar
 [64] "FrequencyBodyGyroscopeMagnitude-std()"         
 [65] "FrequencyBodyGyroscopeJerkMagnitude-mean()"    
 [66] "FrequencyBodyGyroscopeJerkMagnitude-std()"     
-[67] "subject"                                       
-[68] "activity"   
 
 ### Here is all the transforms I did to get to the clean dataset
 
- names(dataSubject)<-c("subject")  -- pulled all subject column from datasubject.txt file, and remane it "Subject"
- 
-names(dataActivity)<- c("activity")  --pulled all activity description data from dataset Dataactivity.txt, and rename the column "activity"
+* Extracts only the measurements on the mean and standard deviation for each measurement.
+subFeaturesNames<-dataFeaturesNames$V2[grep("mean\\(\\)|std\\(\\)", dataFeaturesNames$V2)]
+* names(dataSubject)<-c("subject")  -- pulled all subject column from datasubject.txt file, and remane it "Subject"
+* names(dataActivity)<- c("activity")  --pulled all activity description data from dataset Dataactivity.txt, and rename the column "activity"
+* names(Data)<-gsub("^t", "Time", names(Data))  -- Rename any columns that start with "t" to Time
+* names(Data)<-gsub("^f", "Frequency", names(Data))  -- Rename any columns that start with "f" to Frequency
+* names(Data)<-gsub("Acc", "Accelerometer", names(Data))  -- Rename any columns that contains with "Acc" to "Accelerometer"
+* names(Data)<-gsub("Gyro", "Gyroscope", names(Data))   -- Rename any columns that contains with "Gyro" to "Gyroscrope"
+* names(Data)<-gsub("Mag", "Magnitude", names(Data))   --Rename any columns that contains "Mag" to "Magnitude"
+* names(Data)<-gsub("BodyBody", "Body", names(Data))   -- Rename any columns that contains "Bodybody" to one single "Body"
 
- names(Data)<-gsub("^t", "Time", names(Data))  -- Rename any columns that start with "t" to Time
- 
-names(Data)<-gsub("^f", "Frequency", names(Data))  -- Rename any columns that start with "f" to Frequency
 
-names(Data)<-gsub("Acc", "Accelerometer", names(Data))  -- Rename any columns that contains with "Acc" to "Accelerometer"
-
-names(Data)<-gsub("Gyro", "Gyroscope", names(Data))   -- Rename any columns that contains with "Gyro" to "Gyroscrope"
-
-names(Data)<-gsub("Mag", "Magnitude", names(Data))   --Rename any columns that contains "Mag" to "Magnitude"
-
-names(Data)<-gsub("BodyBody", "Body", names(Data))   -- Rename any columns that contains "Bodybody" to one single "Body"
